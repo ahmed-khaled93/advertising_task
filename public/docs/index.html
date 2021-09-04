@@ -85,12 +85,12 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/ad/explicabo/show" \
+    --get "http://localhost/api/ad/totam/show" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/ad/explicabo/show"
+    "http://localhost/api/ad/totam/show"
 );
 
 const headers = {
@@ -189,21 +189,21 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/ad/accusantium/update" \
+    "http://localhost/api/ad/iure/update" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": \"ut\",
-    \"category_id\": \"numquam\",
-    \"type_id\": \"pariatur\",
-    \"title\": \"ut\",
-    \"description\": \"at\",
-    \"start_date\": \"sequi\"
+    \"user_id\": \"iusto\",
+    \"category_id\": \"rerum\",
+    \"type_id\": \"dolorem\",
+    \"title\": \"minima\",
+    \"description\": \"neque\",
+    \"start_date\": \"consequuntur\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/ad/accusantium/update"
+    "http://localhost/api/ad/iure/update"
 );
 
 const headers = {
@@ -212,12 +212,12 @@ const headers = {
 };
 
 let body = {
-    "user_id": "ut",
-    "category_id": "numquam",
-    "type_id": "pariatur",
-    "title": "ut",
-    "description": "at",
-    "start_date": "sequi"
+    "user_id": "iusto",
+    "category_id": "rerum",
+    "type_id": "dolorem",
+    "title": "minima",
+    "description": "neque",
+    "start_date": "consequuntur"
 }
 
 fetch(url, {
@@ -350,12 +350,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/ad/et/destroy" \
+    "http://localhost/api/ad/excepturi/destroy" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/ad/et/destroy"
+    "http://localhost/api/ad/excepturi/destroy"
 );
 
 const headers = {
@@ -430,6 +430,167 @@ fetch(url, {
 <p>[integer] required ad id</p>            </p>
                     </form>
 
+            <h2 id="ad-requests-POSTapi-ad-store">Store New Ad</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-ad-store">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/ad/store" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": \"at\",
+    \"category_id\": \"pariatur\",
+    \"type_id\": \"rerum\",
+    \"title\": \"rerum\",
+    \"description\": \"voluptas\",
+    \"start_date\": \"sit\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/ad/store"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "at",
+    "category_id": "pariatur",
+    "type_id": "rerum",
+    "title": "rerum",
+    "description": "voluptas",
+    "start_date": "sit"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-ad-store">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Ad Saved Successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-ad-store" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-ad-store"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-ad-store"></code></pre>
+</span>
+<span id="execution-error-POSTapi-ad-store" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-ad-store"></code></pre>
+</span>
+<form id="form-POSTapi-ad-store" data-method="POST"
+      data-path="api/ad/store"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-ad-store', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-ad-store"
+                    onclick="tryItOut('POSTapi-ad-store');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-ad-store"
+                    onclick="cancelTryOut('POSTapi-ad-store');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-ad-store" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/ad/store</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="url"  hidden>
+    <br>
+<p>[integer] required ad id</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>user_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
+                <input type="text"
+               name="user_id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request User Id</p>        </p>
+                <p>
+            <b><code>category_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
+                <input type="text"
+               name="category_id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Category Id</p>        </p>
+                <p>
+            <b><code>type_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
+                <input type="text"
+               name="type_id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Type Id</p>        </p>
+                <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="title"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Ad Title</p>        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="description"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Ad Description</p>        </p>
+                <p>
+            <b><code>start_date</code></b>&nbsp;&nbsp;<small>[date]</small>  &nbsp;
+                <input type="text"
+               name="start_date"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Ad Start Date</p>        </p>
+    
+    </form>
+
         <h1 id="ads">Ads</h1>
 
     
@@ -446,12 +607,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/advertiser/8/ads" \
+    --get "http://localhost/api/advertiser/3/ads" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/advertiser/8/ads"
+    "http://localhost/api/advertiser/3/ads"
 );
 
 const headers = {
@@ -588,7 +749,7 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/ad/list?category_id=placeat&amp;tag=fugiat" \
+    --get "http://localhost/api/ad/list?category_id=quis&amp;tag=doloremque" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
@@ -597,8 +758,8 @@ fetch(url, {
 );
 
 const params = {
-    "category_id": "placeat",
-    "tag": "fugiat",
+    "category_id": "quis",
+    "tag": "doloremque",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -625,6 +786,7 @@ data&quot;: [
  &quot;data&quot;: [
    {
        &quot;id&quot;: 5,
+       &quot;user_id&quot;: 1,
        &quot;category_id&quot;: 3,
        &quot;type_id&quot;: 2,
        &quot;title&quot;: &quot;ad 2&quot;,
@@ -633,6 +795,7 @@ data&quot;: [
    },
    {
        &quot;id&quot;: 7,
+       &quot;user_id&quot;: 2,
        &quot;category_id&quot;: 3,
        &quot;type_id&quot;: 1,
        &quot;title&quot;: &quot;ad 3&quot;,
@@ -786,8 +949,8 @@ data&quot;: [
    }
 ],
 &quot;links&quot;: {
-   &quot;first&quot;: &quot;http://127.0.0.1:8001/api/category/list?page=1&quot;,
-   &quot;last&quot;: &quot;http://127.0.0.1:8001/api/category/list?page=1&quot;,
+   &quot;first&quot;: &quot;http://127.0.0.1:8000/api/category/list?page=1&quot;,
+   &quot;last&quot;: &quot;http://127.0.0.1:8000/api/category/list?page=1&quot;,
    &quot;prev&quot;: null,
    &quot;next&quot;: null
 },
@@ -802,7 +965,7 @@ data&quot;: [
            &quot;active&quot;: false
        },
        {
-         &quot;url&quot;: &quot;http://127.0.0.1:8001/api/category/list?page=1&quot;,
+         &quot;url&quot;: &quot;http://127.0.0.1:8000/api/category/list?page=1&quot;,
          &quot;label&quot;: &quot;1&quot;,
          &quot;active&quot;: true
      },
@@ -812,7 +975,7 @@ data&quot;: [
          &quot;active&quot;: false
      }
  ],
- &quot;path&quot;: &quot;http://127.0.0.1:8001/api/category/list&quot;,
+ &quot;path&quot;: &quot;http://127.0.0.1:8000/api/category/list&quot;,
  &quot;per_page&quot;: 10,
  &quot;to&quot;: 2,
  &quot;total&quot;: 2
@@ -877,12 +1040,12 @@ data&quot;: [
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/category/9/show" \
+    --get "http://localhost/api/category/sit/show" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category/9/show"
+    "http://localhost/api/category/sit/show"
 );
 
 const headers = {
@@ -951,13 +1114,13 @@ fetch(url, {
         </p>
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
                name="id"
                data-endpoint="GETapi-category--id--show"
-               data-component="url" required  hidden>
+               data-component="url"  hidden>
     <br>
-<p>The ID of the category.</p>            </p>
+<p>[integer] required ad id</p>            </p>
                     </form>
 
         <h1 id="category-requests">Category Requests</h1>
@@ -980,7 +1143,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"category\": \"consequatur\"
+    \"category\": \"quasi\"
 }"
 </code></pre>
 
@@ -994,7 +1157,7 @@ const headers = {
 };
 
 let body = {
-    "category": "consequatur"
+    "category": "quasi"
 }
 
 fetch(url, {
@@ -1087,16 +1250,16 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/category/19/update" \
+    "http://localhost/api/category/aut/update" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"category\": \"quisquam\"
+    \"category\": \"aliquid\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category/19/update"
+    "http://localhost/api/category/aut/update"
 );
 
 const headers = {
@@ -1105,7 +1268,7 @@ const headers = {
 };
 
 let body = {
-    "category": "quisquam"
+    "category": "aliquid"
 }
 
 fetch(url, {
@@ -1123,15 +1286,6 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;message&quot;: &quot;Category Updated Successfully&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (400):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Category Field Is Required&quot;
 }</code>
  </pre>
     </span>
@@ -1176,20 +1330,20 @@ fetch(url, {
         </p>
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
                name="id"
                data-endpoint="PATCHapi-category--id--update"
-               data-component="url" required  hidden>
+               data-component="url"  hidden>
     <br>
-<p>The ID of the category.</p>            </p>
+<p>[integer] required ad id</p>            </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
-            <b><code>category</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+            <b><code>category</code></b>&nbsp;&nbsp;<small>[string]</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="category"
                data-endpoint="PATCHapi-category--id--update"
-               data-component="body" required  hidden>
+               data-component="body"  hidden>
     <br>
 <p>Request Category Name</p>        </p>
     
@@ -1207,12 +1361,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/category/17/destroy" \
+    "http://localhost/api/category/voluptatem/destroy" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category/17/destroy"
+    "http://localhost/api/category/voluptatem/destroy"
 );
 
 const headers = {
@@ -1278,184 +1432,14 @@ fetch(url, {
         </p>
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-category--id--destroy"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the category.</p>            </p>
-                    </form>
-
-            <h2 id="category-requests-POSTapi-ad-store">Store New Category</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-ad-store">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/ad/store" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"user_id\": \"excepturi\",
-    \"category_id\": \"maiores\",
-    \"type_id\": \"et\",
-    \"title\": \"veniam\",
-    \"description\": \"facere\",
-    \"start_date\": \"voluptatum\"
-}"
-</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/ad/store"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "user_id": "excepturi",
-    "category_id": "maiores",
-    "type_id": "et",
-    "title": "veniam",
-    "description": "facere",
-    "start_date": "voluptatum"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-POSTapi-ad-store">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Category Saved Successfully&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (400):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Category Field Is Required&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-ad-store" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-ad-store"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-ad-store"></code></pre>
-</span>
-<span id="execution-error-POSTapi-ad-store" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-ad-store"></code></pre>
-</span>
-<form id="form-POSTapi-ad-store" data-method="POST"
-      data-path="api/ad/store"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-ad-store', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-ad-store"
-                    onclick="tryItOut('POSTapi-ad-store');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-ad-store"
-                    onclick="cancelTryOut('POSTapi-ad-store');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-ad-store" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/ad/store</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="id"
-               data-endpoint="POSTapi-ad-store"
+               data-endpoint="DELETEapi-category--id--destroy"
                data-component="url"  hidden>
     <br>
 <p>[integer] required ad id</p>            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>user_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
-                <input type="text"
-               name="user_id"
-               data-endpoint="POSTapi-ad-store"
-               data-component="body" required  hidden>
-    <br>
-<p>Request User Id</p>        </p>
-                <p>
-            <b><code>category_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
-                <input type="text"
-               name="category_id"
-               data-endpoint="POSTapi-ad-store"
-               data-component="body" required  hidden>
-    <br>
-<p>Request Category Id</p>        </p>
-                <p>
-            <b><code>type_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
-                <input type="text"
-               name="type_id"
-               data-endpoint="POSTapi-ad-store"
-               data-component="body" required  hidden>
-    <br>
-<p>Request Type Id</p>        </p>
-                <p>
-            <b><code>title</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
-                <input type="text"
-               name="title"
-               data-endpoint="POSTapi-ad-store"
-               data-component="body" required  hidden>
-    <br>
-<p>Request Ad Title</p>        </p>
-                <p>
-            <b><code>description</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
-                <input type="text"
-               name="description"
-               data-endpoint="POSTapi-ad-store"
-               data-component="body" required  hidden>
-    <br>
-<p>Request Ad Description</p>        </p>
-                <p>
-            <b><code>start_date</code></b>&nbsp;&nbsp;<small>[date]</small>  &nbsp;
-                <input type="text"
-               name="start_date"
-               data-endpoint="POSTapi-ad-store"
-               data-component="body" required  hidden>
-    <br>
-<p>Request Ad Start Date</p>        </p>
-    
-    </form>
+                    </form>
 
         <h1 id="tag">Tag</h1>
 
@@ -1473,12 +1457,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/tag/3/show" \
+    --get "http://localhost/api/tag/dolorem/show" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/tag/3/show"
+    "http://localhost/api/tag/dolorem/show"
 );
 
 const headers = {
@@ -1501,6 +1485,7 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: 1,
+        &quot;ad_id&quot;: 1,
         &quot;tag&quot;: &quot;tag 1&quot;
     }
 }</code>
@@ -1547,13 +1532,13 @@ fetch(url, {
         </p>
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
                name="id"
                data-endpoint="GETapi-tag--id--show"
-               data-component="url" required  hidden>
+               data-component="url"  hidden>
     <br>
-<p>The ID of the tag.</p>            </p>
+<p>[integer] required ad id</p>            </p>
                     </form>
 
         <h1 id="tag-requests">Tag Requests</h1>
@@ -1576,8 +1561,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"ad_id\": \"ut\",
-    \"tag\": \"velit\"
+    \"ad_id\": \"omnis\",
+    \"tag\": \"laudantium\"
 }"
 </code></pre>
 
@@ -1591,8 +1576,8 @@ const headers = {
 };
 
 let body = {
-    "ad_id": "ut",
-    "tag": "velit"
+    "ad_id": "omnis",
+    "tag": "laudantium"
 }
 
 fetch(url, {
@@ -1610,15 +1595,6 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;message&quot;: &quot;Tag Saved Successfully&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (400):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Tag Field Is Required&quot;
 }</code>
  </pre>
     </span>
@@ -1663,13 +1639,13 @@ fetch(url, {
         </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
-            <b><code>ad_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+            <b><code>ad_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
                 <input type="text"
                name="ad_id"
                data-endpoint="POSTapi-tag-store"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>Request Ad Id</p>        </p>
                 <p>
             <b><code>tag</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
                 <input type="text"
@@ -1693,17 +1669,17 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/tag/4/update" \
+    "http://localhost/api/tag/accusamus/update" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"ad_id\": \"eum\",
-    \"tag\": \"excepturi\"
+    \"ad_id\": \"deleniti\",
+    \"tag\": \"voluptate\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/tag/4/update"
+    "http://localhost/api/tag/accusamus/update"
 );
 
 const headers = {
@@ -1712,8 +1688,8 @@ const headers = {
 };
 
 let body = {
-    "ad_id": "eum",
-    "tag": "excepturi"
+    "ad_id": "deleniti",
+    "tag": "voluptate"
 }
 
 fetch(url, {
@@ -1731,15 +1707,6 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;message&quot;: &quot;Tag Updated Successfully&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (400):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Tag Field Is Required&quot;
 }</code>
  </pre>
     </span>
@@ -1784,28 +1751,28 @@ fetch(url, {
         </p>
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
                name="id"
                data-endpoint="PATCHapi-tag--id--update"
-               data-component="url" required  hidden>
+               data-component="url"  hidden>
     <br>
-<p>The ID of the tag.</p>            </p>
+<p>[integer] required ad id</p>            </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
-            <b><code>ad_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+            <b><code>ad_id</code></b>&nbsp;&nbsp;<small>[integer]</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="ad_id"
                data-endpoint="PATCHapi-tag--id--update"
-               data-component="body" required  hidden>
+               data-component="body"  hidden>
     <br>
-        </p>
+<p>Request Ad Id</p>        </p>
                 <p>
-            <b><code>tag</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+            <b><code>tag</code></b>&nbsp;&nbsp;<small>[string]</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="tag"
                data-endpoint="PATCHapi-tag--id--update"
-               data-component="body" required  hidden>
+               data-component="body"  hidden>
     <br>
 <p>Request Tag Name</p>        </p>
     
@@ -1823,12 +1790,12 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/tag/3/destroy" \
+    "http://localhost/api/tag/dolor/destroy" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/tag/3/destroy"
+    "http://localhost/api/tag/dolor/destroy"
 );
 
 const headers = {
@@ -1894,13 +1861,13 @@ fetch(url, {
         </p>
                     <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
                name="id"
                data-endpoint="DELETEapi-tag--id--destroy"
-               data-component="url" required  hidden>
+               data-component="url"  hidden>
     <br>
-<p>The ID of the tag.</p>            </p>
+<p>[integer] required ad id</p>            </p>
                     </form>
 
         <h1 id="tags">tags</h1>

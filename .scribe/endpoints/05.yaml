@@ -19,7 +19,7 @@ endpoints:
         name: category
         description: 'Request Category Name'
         required: true
-        example: consequatur
+        example: quasi
         type: '[string]'
     responses:
       -
@@ -53,17 +53,17 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the category.'
-        required: true
-        example: 19
-        type: integer
+        description: '[integer] required ad id'
+        required: false
+        example: aut
+        type: string
     queryParameters: []
     bodyParameters:
       category:
         name: category
         description: 'Request Category Name'
-        required: true
-        example: quisquam
+        required: false
+        example: aliquid
         type: '[string]'
     responses:
       -
@@ -74,14 +74,6 @@ endpoints:
           }
         headers: []
         description: '200'
-      -
-        status: 400
-        content: |-
-          {
-           "message": "Category Field Is Required"
-          }
-        headers: []
-        description: '400'
     responseFields: []
   -
     httpMethods:
@@ -97,10 +89,10 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the category.'
-        required: true
-        example: 17
-        type: integer
+        description: '[integer] required ad id'
+        required: false
+        example: voluptatem
+        type: string
     queryParameters: []
     bodyParameters: []
     responses:
@@ -112,78 +104,4 @@ endpoints:
           }
         headers: []
         description: '200'
-    responseFields: []
-  -
-    httpMethods:
-      - POST
-    uri: api/ad/store
-    metadata:
-      title: 'Store New Category'
-      description: ''
-      authenticated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: '[integer] required ad id'
-        required: false
-        example: qui
-        type: string
-    queryParameters: []
-    bodyParameters:
-      user_id:
-        name: user_id
-        description: 'Request User Id'
-        required: true
-        example: excepturi
-        type: '[integer]'
-      category_id:
-        name: category_id
-        description: 'Request Category Id'
-        required: true
-        example: maiores
-        type: '[integer]'
-      type_id:
-        name: type_id
-        description: 'Request Type Id'
-        required: true
-        example: et
-        type: '[integer]'
-      title:
-        name: title
-        description: 'Request Ad Title'
-        required: true
-        example: veniam
-        type: '[string]'
-      description:
-        name: description
-        description: 'Request Ad Description'
-        required: true
-        example: facere
-        type: '[string]'
-      start_date:
-        name: start_date
-        description: 'Request Ad Start Date'
-        required: true
-        example: voluptatum
-        type: '[date]'
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-             "message": "Category Saved Successfully"
-          }
-        headers: []
-        description: '200'
-      -
-        status: 400
-        content: |-
-          {
-           "message": "Category Field Is Required"
-          }
-        headers: []
-        description: '400'
     responseFields: []

@@ -70,7 +70,7 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: explicabo
+            value: totam
   '/api/ad/{id}/update':
     patch:
       summary: 'Update Ad'
@@ -115,27 +115,27 @@ paths:
                 user_id:
                   type: '[integer]'
                   description: 'Request User Id'
-                  example: ut
+                  example: iusto
                 category_id:
                   type: '[integer]'
                   description: 'Request Category Id'
-                  example: numquam
+                  example: rerum
                 type_id:
                   type: '[integer]'
                   description: 'Request Type Id'
-                  example: pariatur
+                  example: dolorem
                 title:
                   type: '[string]'
                   description: 'Request Ad Title'
-                  example: ut
+                  example: minima
                 description:
                   type: '[string]'
                   description: 'Request Ad Description'
-                  example: at
+                  example: neque
                 start_date:
                   type: '[date]'
                   description: 'Request Ad Start Date'
-                  example: sequi
+                  example: consequuntur
       security: []
     parameters:
       -
@@ -151,7 +151,7 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: accusantium
+            value: iure
   '/api/ad/{id}/destroy':
     delete:
       summary: 'Destroy Ad'
@@ -201,7 +201,95 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: et
+            value: excepturi
+  /api/ad/store:
+    post:
+      summary: 'Store New Ad'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Ad Saved Successfully'
+                properties:
+                  message:
+                    type: string
+                    example: 'Ad Saved Successfully'
+      tags:
+        - 'Ad Requests'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: '[integer]'
+                  description: 'Request User Id'
+                  example: at
+                category_id:
+                  type: '[integer]'
+                  description: 'Request Category Id'
+                  example: pariatur
+                type_id:
+                  type: '[integer]'
+                  description: 'Request Type Id'
+                  example: rerum
+                title:
+                  type: '[string]'
+                  description: 'Request Ad Title'
+                  example: rerum
+                description:
+                  type: '[string]'
+                  description: 'Request Ad Description'
+                  example: voluptas
+                start_date:
+                  type: '[date]'
+                  description: 'Request Ad Start Date'
+                  example: sit
+              required:
+                - user_id
+                - category_id
+                - type_id
+                - title
+                - description
+                - start_date
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Optional parameter. [integer] required ad id'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: dolores
   '/api/advertiser/{user}/ads':
     get:
       summary: 'List Advertiser Ads.'
@@ -316,7 +404,7 @@ paths:
         in: path
         name: user
         description: ''
-        example: 8
+        example: 3
         required: true
         schema:
           type: integer
@@ -333,7 +421,7 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: delectus
+            value: veniam
   /api/ad/list:
     get:
       summary: 'List All Ads.'
@@ -343,22 +431,22 @@ paths:
           in: query
           name: category_id
           description: '[integer] Request Category Id'
-          example: placeat
+          example: quis
           required: false
           schema:
             type: string
             description: '[integer] Request Category Id'
-            example: placeat
+            example: quis
         -
           in: query
           name: tag
           description: '[string] Request Tag Name'
-          example: fugiat
+          example: doloremque
           required: false
           schema:
             type: string
             description: '[string] Request Tag Name'
-            example: fugiat
+            example: doloremque
         -
           in: header
           name: Content-Type
@@ -380,7 +468,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\ndata\": [\n \"data\": [\n   {\n       \"id\": 5,\n       \"category_id\": 3,\n       \"type_id\": 2,\n       \"title\": \"ad 2\",\n       \"description\": \"description 2\",\n       \"start_date\": \"2021-03-15\"\n   },\n   {\n       \"id\": 7,\n       \"category_id\": 3,\n       \"type_id\": 1,\n       \"title\": \"ad 3\",\n       \"description\": \"description 3\",\n       \"start_date\": \"2021-05-20\"\n   }\n ],\n \"links\": {\n     \"first\": \"http://127.0.0.1:8000/api/ad/list?page=1\",\n     \"last\": \"http://127.0.0.1:8000/api/ad/list?page=1\",\n     \"prev\": null,\n     \"next\": null\n },\n \"meta\": {\n    \"current_page\": 1,\n    \"from\": 1,\n    \"last_page\": 1,\n    \"links\": [\n       {\n           \"url\": null,\n           \"label\": \"&laquo; Previous\",\n           \"active\": false\n       },\n       {\n           \"url\": \"http://127.0.0.1:8000/api/ad/list?page=1\",\n           \"label\": \"1\",\n           \"active\": true\n       },\n       {\n           \"url\": null,\n           \"label\": \"Next &raquo;\",\n           \"active\": false\n       }\n   ],\n   \"path\": \"http://127.0.0.1:8000/api/ad/list\",\n   \"per_page\": 10,\n   \"to\": 2,\n   \"total\": 2\n }\n }"
+                example: "{\ndata\": [\n \"data\": [\n   {\n       \"id\": 5,\n       \"user_id\": 1,\n       \"category_id\": 3,\n       \"type_id\": 2,\n       \"title\": \"ad 2\",\n       \"description\": \"description 2\",\n       \"start_date\": \"2021-03-15\"\n   },\n   {\n       \"id\": 7,\n       \"user_id\": 2,\n       \"category_id\": 3,\n       \"type_id\": 1,\n       \"title\": \"ad 3\",\n       \"description\": \"description 3\",\n       \"start_date\": \"2021-05-20\"\n   }\n ],\n \"links\": {\n     \"first\": \"http://127.0.0.1:8000/api/ad/list?page=1\",\n     \"last\": \"http://127.0.0.1:8000/api/ad/list?page=1\",\n     \"prev\": null,\n     \"next\": null\n },\n \"meta\": {\n    \"current_page\": 1,\n    \"from\": 1,\n    \"last_page\": 1,\n    \"links\": [\n       {\n           \"url\": null,\n           \"label\": \"&laquo; Previous\",\n           \"active\": false\n       },\n       {\n           \"url\": \"http://127.0.0.1:8000/api/ad/list?page=1\",\n           \"label\": \"1\",\n           \"active\": true\n       },\n       {\n           \"url\": null,\n           \"label\": \"Next &raquo;\",\n           \"active\": false\n       }\n   ],\n   \"path\": \"http://127.0.0.1:8000/api/ad/list\",\n   \"per_page\": 10,\n   \"to\": 2,\n   \"total\": 2\n }\n }"
       tags:
         - Ads
       security: []
@@ -410,7 +498,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\ndata\": [\n {\n       \"id\": 2,\n       \"category\": \"category 2\"\n   },\n   {\n       \"id\": 1,\n       \"category\": \"category 1\"\n   }\n],\n\"links\": {\n   \"first\": \"http://127.0.0.1:8001/api/category/list?page=1\",\n   \"last\": \"http://127.0.0.1:8001/api/category/list?page=1\",\n   \"prev\": null,\n   \"next\": null\n},\n\"meta\": {\n \"current_page\": 1,\n   \"from\": 1,\n   \"last_page\": 1,\n   \"links\": [\n       {\n           \"url\": null,\n           \"label\": \"&laquo; Previous\",\n           \"active\": false\n       },\n       {\n         \"url\": \"http://127.0.0.1:8001/api/category/list?page=1\",\n         \"label\": \"1\",\n         \"active\": true\n     },\n     {\n         \"url\": null,\n         \"label\": \"Next &raquo;\",\n         \"active\": false\n     }\n ],\n \"path\": \"http://127.0.0.1:8001/api/category/list\",\n \"per_page\": 10,\n \"to\": 2,\n \"total\": 2\n}\n}"
+                example: "{\ndata\": [\n {\n       \"id\": 2,\n       \"category\": \"category 2\"\n   },\n   {\n       \"id\": 1,\n       \"category\": \"category 1\"\n   }\n],\n\"links\": {\n   \"first\": \"http://127.0.0.1:8000/api/category/list?page=1\",\n   \"last\": \"http://127.0.0.1:8000/api/category/list?page=1\",\n   \"prev\": null,\n   \"next\": null\n},\n\"meta\": {\n \"current_page\": 1,\n   \"from\": 1,\n   \"last_page\": 1,\n   \"links\": [\n       {\n           \"url\": null,\n           \"label\": \"&laquo; Previous\",\n           \"active\": false\n       },\n       {\n         \"url\": \"http://127.0.0.1:8000/api/category/list?page=1\",\n         \"label\": \"1\",\n         \"active\": true\n     },\n     {\n         \"url\": null,\n         \"label\": \"Next &raquo;\",\n         \"active\": false\n     }\n ],\n \"path\": \"http://127.0.0.1:8000/api/category/list\",\n \"per_page\": 10,\n \"to\": 2,\n \"total\": 2\n}\n}"
       tags:
         - Categories
       security: []
@@ -457,11 +545,17 @@ paths:
       -
         in: path
         name: id
-        description: 'The ID of the category.'
-        example: 9
+        description: 'Optional parameter. [integer] required ad id'
         required: true
         schema:
-          type: integer
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: sit
   /api/category/store:
     post:
       summary: 'Store New Category'
@@ -518,7 +612,7 @@ paths:
                 category:
                   type: '[string]'
                   description: 'Request Category Name'
-                  example: consequatur
+                  example: quasi
               required:
                 - category
       security: []
@@ -554,22 +648,10 @@ paths:
                   message:
                     type: string
                     example: 'Category Updated Successfully'
-        400:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Category Field Is Required'
-                properties:
-                  message:
-                    type: string
-                    example: 'Category Field Is Required'
       tags:
         - 'Category Requests'
       requestBody:
-        required: true
+        required: false
         content:
           application/json:
             schema:
@@ -578,19 +660,23 @@ paths:
                 category:
                   type: '[string]'
                   description: 'Request Category Name'
-                  example: quisquam
-              required:
-                - category
+                  example: aliquid
       security: []
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the category.'
-        example: 19
+        description: 'Optional parameter. [integer] required ad id'
         required: true
         schema:
-          type: integer
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: aut
   '/api/category/{id}/destroy':
     delete:
       summary: 'Destroy Category'
@@ -630,100 +716,6 @@ paths:
       -
         in: path
         name: id
-        description: 'The ID of the category.'
-        example: 17
-        required: true
-        schema:
-          type: integer
-  /api/ad/store:
-    post:
-      summary: 'Store New Category'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Category Saved Successfully'
-                properties:
-                  message:
-                    type: string
-                    example: 'Category Saved Successfully'
-        400:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Category Field Is Required'
-                properties:
-                  message:
-                    type: string
-                    example: 'Category Field Is Required'
-      tags:
-        - 'Category Requests'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: '[integer]'
-                  description: 'Request User Id'
-                  example: excepturi
-                category_id:
-                  type: '[integer]'
-                  description: 'Request Category Id'
-                  example: maiores
-                type_id:
-                  type: '[integer]'
-                  description: 'Request Type Id'
-                  example: et
-                title:
-                  type: '[string]'
-                  description: 'Request Ad Title'
-                  example: veniam
-                description:
-                  type: '[string]'
-                  description: 'Request Ad Description'
-                  example: facere
-                start_date:
-                  type: '[date]'
-                  description: 'Request Ad Start Date'
-                  example: voluptatum
-              required:
-                - user_id
-                - category_id
-                - type_id
-                - title
-                - description
-                - start_date
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
         description: 'Optional parameter. [integer] required ad id'
         required: true
         schema:
@@ -734,7 +726,7 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: qui
+            value: voluptatem
   '/api/tag/{id}/show':
     get:
       summary: 'List Tag Data.'
@@ -764,12 +756,14 @@ paths:
                 example:
                   data:
                     id: 1
+                    ad_id: 1
                     tag: 'tag 1'
                 properties:
                   data:
                     type: object
                     example:
                       id: 1
+                      ad_id: 1
                       tag: 'tag 1'
       tags:
         - Tag
@@ -778,11 +772,17 @@ paths:
       -
         in: path
         name: id
-        description: 'The ID of the tag.'
-        example: 3
+        description: 'Optional parameter. [integer] required ad id'
         required: true
         schema:
-          type: integer
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: dolorem
   /api/tag/store:
     post:
       summary: 'Store New Tag'
@@ -815,18 +815,6 @@ paths:
                   message:
                     type: string
                     example: 'Tag Saved Successfully'
-        400:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Tag Field Is Required'
-                properties:
-                  message:
-                    type: string
-                    example: 'Tag Field Is Required'
       tags:
         - 'Tag Requests'
       requestBody:
@@ -837,13 +825,13 @@ paths:
               type: object
               properties:
                 ad_id:
-                  type: string
-                  description: ''
-                  example: ut
+                  type: '[integer]'
+                  description: 'Request Ad Id'
+                  example: omnis
                 tag:
                   type: '[string]'
                   description: 'Request Tag Name'
-                  example: velit
+                  example: laudantium
               required:
                 - ad_id
                 - tag
@@ -880,48 +868,39 @@ paths:
                   message:
                     type: string
                     example: 'Tag Updated Successfully'
-        400:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Tag Field Is Required'
-                properties:
-                  message:
-                    type: string
-                    example: 'Tag Field Is Required'
       tags:
         - 'Tag Requests'
       requestBody:
-        required: true
+        required: false
         content:
           application/json:
             schema:
               type: object
               properties:
                 ad_id:
-                  type: string
-                  description: ''
-                  example: eum
+                  type: '[integer]'
+                  description: 'Request Ad Id'
+                  example: deleniti
                 tag:
                   type: '[string]'
                   description: 'Request Tag Name'
-                  example: excepturi
-              required:
-                - ad_id
-                - tag
+                  example: voluptate
       security: []
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the tag.'
-        example: 4
+        description: 'Optional parameter. [integer] required ad id'
         required: true
         schema:
-          type: integer
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: accusamus
   '/api/tag/{id}/destroy':
     delete:
       summary: 'Destroy Tag'
@@ -961,11 +940,17 @@ paths:
       -
         in: path
         name: id
-        description: 'The ID of the tag.'
-        example: 3
+        description: 'Optional parameter. [integer] required ad id'
         required: true
         schema:
-          type: integer
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: dolor
   /api/tag/list:
     get:
       summary: 'List All Tags.'

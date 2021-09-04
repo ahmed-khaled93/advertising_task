@@ -17,15 +17,15 @@ endpoints:
     bodyParameters:
       ad_id:
         name: ad_id
-        description: ''
+        description: 'Request Ad Id'
         required: true
-        example: ut
-        type: string
+        example: omnis
+        type: '[integer]'
       tag:
         name: tag
         description: 'Request Tag Name'
         required: true
-        example: velit
+        example: laudantium
         type: '[string]'
     responses:
       -
@@ -36,14 +36,6 @@ endpoints:
           }
         headers: []
         description: '200'
-      -
-        status: 400
-        content: |-
-          {
-           "message": "Tag Field Is Required"
-          }
-        headers: []
-        description: '400'
     responseFields: []
   -
     httpMethods:
@@ -59,23 +51,23 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the tag.'
-        required: true
-        example: 4
-        type: integer
+        description: '[integer] required ad id'
+        required: false
+        example: accusamus
+        type: string
     queryParameters: []
     bodyParameters:
       ad_id:
         name: ad_id
-        description: ''
-        required: true
-        example: eum
-        type: string
+        description: 'Request Ad Id'
+        required: false
+        example: deleniti
+        type: '[integer]'
       tag:
         name: tag
         description: 'Request Tag Name'
-        required: true
-        example: excepturi
+        required: false
+        example: voluptate
         type: '[string]'
     responses:
       -
@@ -86,14 +78,6 @@ endpoints:
           }
         headers: []
         description: '200'
-      -
-        status: 400
-        content: |-
-          {
-           "message": "Tag Field Is Required"
-          }
-        headers: []
-        description: '400'
     responseFields: []
   -
     httpMethods:
@@ -109,10 +93,10 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the tag.'
-        required: true
-        example: 3
-        type: integer
+        description: '[integer] required ad id'
+        required: false
+        example: dolor
+        type: string
     queryParameters: []
     bodyParameters: []
     responses:

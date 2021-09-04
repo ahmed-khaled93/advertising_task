@@ -17,7 +17,7 @@ endpoints:
         name: id
         description: '[integer] required ad id'
         required: false
-        example: explicabo
+        example: totam
         type: string
     queryParameters: []
     bodyParameters: []

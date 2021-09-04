@@ -17,7 +17,7 @@ endpoints:
         name: id
         description: '[integer] required ad id'
         required: false
-        example: accusantium
+        example: iure
         type: string
     queryParameters: []
     bodyParameters:
@@ -25,37 +25,37 @@ endpoints:
         name: user_id
         description: 'Request User Id'
         required: false
-        example: ut
+        example: iusto
         type: '[integer]'
       category_id:
         name: category_id
         description: 'Request Category Id'
         required: false
-        example: numquam
+        example: rerum
         type: '[integer]'
       type_id:
         name: type_id
         description: 'Request Type Id'
         required: false
-        example: pariatur
+        example: dolorem
         type: '[integer]'
       title:
         name: title
         description: 'Request Ad Title'
         required: false
-        example: ut
+        example: minima
         type: '[string]'
       description:
         name: description
         description: 'Request Ad Description'
         required: false
-        example: at
+        example: neque
         type: '[string]'
       start_date:
         name: start_date
         description: 'Request Ad Start Date'
         required: false
-        example: sequi
+        example: consequuntur
         type: '[date]'
     responses:
       -
@@ -83,7 +83,7 @@ endpoints:
         name: id
         description: '[integer] required ad id'
         required: false
-        example: et
+        example: excepturi
         type: string
     queryParameters: []
     bodyParameters: []
@@ -93,6 +93,72 @@ endpoints:
         content: |-
           {
              "message": "Ad Deleted Successfully"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ad/store
+    metadata:
+      title: 'Store New Ad'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: '[integer] required ad id'
+        required: false
+        example: dolores
+        type: string
+    queryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'Request User Id'
+        required: true
+        example: at
+        type: '[integer]'
+      category_id:
+        name: category_id
+        description: 'Request Category Id'
+        required: true
+        example: pariatur
+        type: '[integer]'
+      type_id:
+        name: type_id
+        description: 'Request Type Id'
+        required: true
+        example: rerum
+        type: '[integer]'
+      title:
+        name: title
+        description: 'Request Ad Title'
+        required: true
+        example: rerum
+        type: '[string]'
+      description:
+        name: description
+        description: 'Request Ad Description'
+        required: true
+        example: voluptas
+        type: '[string]'
+      start_date:
+        name: start_date
+        description: 'Request Ad Start Date'
+        required: true
+        example: sit
+        type: '[date]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "message": "Ad Saved Successfully"
           }
         headers: []
         description: '200'

@@ -19,13 +19,13 @@ endpoints:
         name: user
         description: ''
         required: true
-        example: 8
+        example: 3
         type: integer
       id:
         name: id
         description: '[integer] required user id (advertiser id)'
         required: false
-        example: delectus
+        example: veniam
         type: string
     queryParameters: []
     bodyParameters: []
@@ -98,13 +98,13 @@ endpoints:
         name: category_id
         description: '[integer] Request Category Id'
         required: false
-        example: placeat
+        example: quis
         type: string
       tag:
         name: tag
         description: '[string] Request Tag Name'
         required: false
-        example: fugiat
+        example: doloremque
         type: string
     bodyParameters: []
     responses:
@@ -116,6 +116,7 @@ endpoints:
            "data": [
              {
                  "id": 5,
+                 "user_id": 1,
                  "category_id": 3,
                  "type_id": 2,
                  "title": "ad 2",
@@ -124,6 +125,7 @@ endpoints:
              },
              {
                  "id": 7,
+                 "user_id": 2,
                  "category_id": 3,
                  "type_id": 1,
                  "title": "ad 3",
