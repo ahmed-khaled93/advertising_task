@@ -78,107 +78,83 @@ class TagController extends Controller
     /**
      * Store New Tag
      *
-     *
      * @group Tag Requests
      *
+     * @bodyParam ad_id [integer] required Request Ad Id
      * @bodyParam tag [string] required Request Tag Name
      *
      * @response 200 {
      *	   "message": "Tag Saved Successfully"
      * }
      *
-     * @response 400 {
-     *  "message": "Tag Field Is Required"
-     * }
      */
      public function store(Request $request)
      {
-         $validation = Validator::make($request->all(),[
-            'ad_id' =>  'required',
-            'tag'   =>  'required',
+         // validate the request
+         $request->validate([
+             'ad_id' =>  'required',
+             'tag'   =>  'required',
          ]);
 
-         if($validation->fails()){
+         // store the tag
+        $store = $this->tagRepository->store($request);
 
-            return response()->json([
-                'message' => "Tag Field Is Required"
-              ], 400);
-        }
-        else
-        {
-            $store = $this->tagRepository->store($request);
-
-            return response()->json([
-               'message' => "Tag Saved Successfully"
-             ], 200);
-        }
+        return response()->json([
+           'message' => "Tag Saved Successfully"
+         ], 200);
 
      }
 
      /**
       * List Tag Data.
       *
+      * @urlParam id [integer] required ad id
       *
       * @group Tag
       *
       * @response 200 {
       *     "data": {
       *        "id": 1,
+      *        "ad_id": 1,
       *        "tag": "tag 1"
       *    }
       * }
       */
-     public function show(Tag $tag){
-
+     public function show(Tag $tag)
+     {
          return new TagResource($tag);
      }
 
      /**
       * Update Tag
       *
-      *
       * @group Tag Requests
       *
-      * @bodyParam tag [string] required Request Tag Name
+      * @urlParam id [integer] required ad id
+      * @bodyParam ad_id [integer] Request Ad Id
+      * @bodyParam tag [string] Request Tag Name
       *
       * @response 200 {
       *	   "message": "Tag Updated Successfully"
       * }
       *
-      * @response 400 {
-      *  "message": "Tag Field Is Required"
-      * }
       */
       public function update(Tag $tag, Request $request)
       {
-        $validation = Validator::make($request->all(),[
-            'ad_id' =>  'required',
-            'tag'   => 'required',
-        ]);
+         // update the ad
+         $update = $this->tagRepository->update($tag);
 
-        if($validation->fails()){
-
-             return response()->json([
-                 'message' => "Tag Field Is Required"
-               ], 400);
-         }
-         else
-         {
-             $update = $this->tagRepository->update($tag);
-
-               return response()->json([
-                  'message' => "Tag Updated Successfully"
-                ], 200);
-         }
-
+         return response()->json([
+            'message' => "Tag Updated Successfully"
+          ], 200);
       }
 
       /**
        * Destroy Tag
        *
-       *
        * @group Tag Requests
        *
+       * @urlParam id [integer] required ad id
        *
        * @response 200 {
        *	   "message": "Tag Deleted Successfully"

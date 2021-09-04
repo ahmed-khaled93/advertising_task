@@ -25,6 +25,7 @@ class TagRepository extends BaseRepository
      */
     public function index(){
         $tags = TagResource::collection(Tag::orderBy('id', 'desc')->paginate(10));
+        
         return $tags;
     }
 

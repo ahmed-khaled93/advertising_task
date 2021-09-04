@@ -9,18 +9,10 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-
-    protected $advertiserRepository;
-
-    public function __construct(AdvertiserRepository $advertiserRepository)
-    {
-        $this->advertiserRepository = $advertiserRepository;
-    }
-
     /**
      * List Advertiser Ads.
      *
-     *@urlParam id [integer] required user id (advertiser id)
+     * @urlParam id [integer] required user id (advertiser id)
      *
      * @group Ads
      *

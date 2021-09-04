@@ -1,0 +1,2052 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.9.1.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+        var baseUrl = "http://localhost";
+    </script>
+    <script src="../docs/js/tryitout-3.9.1.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: September 4 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="ad">Ad</h1>
+
+    
+
+            <h2 id="ad-GETapi-ad--id--show">List Ad Data.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-ad--id--show">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/ad/explicabo/show" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/ad/explicabo/show"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-ad--id--show">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;user_id&quot;: 1,
+        &quot;category_id&quot;: 1,
+        &quot;type_id&quot;: 1,
+        &quot;title&quot;: &quot;title 1&quot;,
+        &quot;description&quot;: &quot;description 1&quot;,
+        &quot;start_date&quot;: &quot;2021-09-15&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-ad--id--show" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-ad--id--show"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-ad--id--show"></code></pre>
+</span>
+<span id="execution-error-GETapi-ad--id--show" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-ad--id--show"></code></pre>
+</span>
+<form id="form-GETapi-ad--id--show" data-method="GET"
+      data-path="api/ad/{id}/show"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-ad--id--show', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-ad--id--show"
+                    onclick="tryItOut('GETapi-ad--id--show');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-ad--id--show"
+                    onclick="cancelTryOut('GETapi-ad--id--show');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-ad--id--show" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/ad/{id}/show</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-ad--id--show"
+               data-component="url"  hidden>
+    <br>
+<p>[integer] required ad id</p>            </p>
+                    </form>
+
+        <h1 id="ad-requests">Ad Requests</h1>
+
+    
+
+            <h2 id="ad-requests-PATCHapi-ad--id--update">Update Ad</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-ad--id--update">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PATCH \
+    "http://localhost/api/ad/accusantium/update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": \"ut\",
+    \"category_id\": \"numquam\",
+    \"type_id\": \"pariatur\",
+    \"title\": \"ut\",
+    \"description\": \"at\",
+    \"start_date\": \"sequi\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/ad/accusantium/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "ut",
+    "category_id": "numquam",
+    "type_id": "pariatur",
+    "title": "ut",
+    "description": "at",
+    "start_date": "sequi"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PATCHapi-ad--id--update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Ad Updated Successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-ad--id--update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-ad--id--update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-ad--id--update"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-ad--id--update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-ad--id--update"></code></pre>
+</span>
+<form id="form-PATCHapi-ad--id--update" data-method="PATCH"
+      data-path="api/ad/{id}/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-ad--id--update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-ad--id--update"
+                    onclick="tryItOut('PATCHapi-ad--id--update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-ad--id--update"
+                    onclick="cancelTryOut('PATCHapi-ad--id--update');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-ad--id--update" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/ad/{id}/update</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="url"  hidden>
+    <br>
+<p>[integer] required ad id</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>user_id</code></b>&nbsp;&nbsp;<small>[integer]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="user_id"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="body"  hidden>
+    <br>
+<p>Request User Id</p>        </p>
+                <p>
+            <b><code>category_id</code></b>&nbsp;&nbsp;<small>[integer]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="category_id"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="body"  hidden>
+    <br>
+<p>Request Category Id</p>        </p>
+                <p>
+            <b><code>type_id</code></b>&nbsp;&nbsp;<small>[integer]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="type_id"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="body"  hidden>
+    <br>
+<p>Request Type Id</p>        </p>
+                <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>[string]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="title"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="body"  hidden>
+    <br>
+<p>Request Ad Title</p>        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>[string]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="description"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="body"  hidden>
+    <br>
+<p>Request Ad Description</p>        </p>
+                <p>
+            <b><code>start_date</code></b>&nbsp;&nbsp;<small>[date]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="start_date"
+               data-endpoint="PATCHapi-ad--id--update"
+               data-component="body"  hidden>
+    <br>
+<p>Request Ad Start Date</p>        </p>
+    
+    </form>
+
+            <h2 id="ad-requests-DELETEapi-ad--id--destroy">Destroy Ad</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-ad--id--destroy">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/ad/et/destroy" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/ad/et/destroy"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-ad--id--destroy">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Ad Deleted Successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-ad--id--destroy" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-ad--id--destroy"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-ad--id--destroy"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-ad--id--destroy" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-ad--id--destroy"></code></pre>
+</span>
+<form id="form-DELETEapi-ad--id--destroy" data-method="DELETE"
+      data-path="api/ad/{id}/destroy"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-ad--id--destroy', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-ad--id--destroy"
+                    onclick="tryItOut('DELETEapi-ad--id--destroy');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-ad--id--destroy"
+                    onclick="cancelTryOut('DELETEapi-ad--id--destroy');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-ad--id--destroy" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/ad/{id}/destroy</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="DELETEapi-ad--id--destroy"
+               data-component="url"  hidden>
+    <br>
+<p>[integer] required ad id</p>            </p>
+                    </form>
+
+        <h1 id="ads">Ads</h1>
+
+    
+
+            <h2 id="ads-GETapi-advertiser--user--ads">List Advertiser Ads.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-advertiser--user--ads">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/advertiser/8/ads" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/advertiser/8/ads"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-advertiser--user--ads">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 8,
+            &quot;user_id&quot;: 3,
+            &quot;category_id&quot;: 1,
+            &quot;type_id&quot;: 2,
+            &quot;title&quot;: &quot;ad 6&quot;,
+            &quot;description&quot;: &quot;description 6&quot;,
+            &quot;start_date&quot;: &quot;2021-09-05&quot;
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/advertiser/ads?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/advertiser/ads?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/advertiser/ads?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/advertiser/ads&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;to&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-advertiser--user--ads" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-advertiser--user--ads"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-advertiser--user--ads"></code></pre>
+</span>
+<span id="execution-error-GETapi-advertiser--user--ads" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-advertiser--user--ads"></code></pre>
+</span>
+<form id="form-GETapi-advertiser--user--ads" data-method="GET"
+      data-path="api/advertiser/{user}/ads"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-advertiser--user--ads', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-advertiser--user--ads"
+                    onclick="tryItOut('GETapi-advertiser--user--ads');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-advertiser--user--ads"
+                    onclick="cancelTryOut('GETapi-advertiser--user--ads');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-advertiser--user--ads" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/advertiser/{user}/ads</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>user</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="user"
+               data-endpoint="GETapi-advertiser--user--ads"
+               data-component="url" required  hidden>
+    <br>
+            </p>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-advertiser--user--ads"
+               data-component="url"  hidden>
+    <br>
+<p>[integer] required user id (advertiser id)</p>            </p>
+                    </form>
+
+            <h2 id="ads-GETapi-ad-list">List All Ads.</h2>
+
+<p>
+</p>
+
+<p>returns a Pagination of Ads 10 per page</p>
+
+<span id="example-requests-GETapi-ad-list">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/ad/list?category_id=placeat&amp;tag=fugiat" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/ad/list"
+);
+
+const params = {
+    "category_id": "placeat",
+    "tag": "fugiat",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-ad-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+data&quot;: [
+ &quot;data&quot;: [
+   {
+       &quot;id&quot;: 5,
+       &quot;category_id&quot;: 3,
+       &quot;type_id&quot;: 2,
+       &quot;title&quot;: &quot;ad 2&quot;,
+       &quot;description&quot;: &quot;description 2&quot;,
+       &quot;start_date&quot;: &quot;2021-03-15&quot;
+   },
+   {
+       &quot;id&quot;: 7,
+       &quot;category_id&quot;: 3,
+       &quot;type_id&quot;: 1,
+       &quot;title&quot;: &quot;ad 3&quot;,
+       &quot;description&quot;: &quot;description 3&quot;,
+       &quot;start_date&quot;: &quot;2021-05-20&quot;
+   }
+ ],
+ &quot;links&quot;: {
+     &quot;first&quot;: &quot;http://127.0.0.1:8000/api/ad/list?page=1&quot;,
+     &quot;last&quot;: &quot;http://127.0.0.1:8000/api/ad/list?page=1&quot;,
+     &quot;prev&quot;: null,
+     &quot;next&quot;: null
+ },
+ &quot;meta&quot;: {
+    &quot;current_page&quot;: 1,
+    &quot;from&quot;: 1,
+    &quot;last_page&quot;: 1,
+    &quot;links&quot;: [
+       {
+           &quot;url&quot;: null,
+           &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+           &quot;active&quot;: false
+       },
+       {
+           &quot;url&quot;: &quot;http://127.0.0.1:8000/api/ad/list?page=1&quot;,
+           &quot;label&quot;: &quot;1&quot;,
+           &quot;active&quot;: true
+       },
+       {
+           &quot;url&quot;: null,
+           &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+           &quot;active&quot;: false
+       }
+   ],
+   &quot;path&quot;: &quot;http://127.0.0.1:8000/api/ad/list&quot;,
+   &quot;per_page&quot;: 10,
+   &quot;to&quot;: 2,
+   &quot;total&quot;: 2
+ }
+ }</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-ad-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-ad-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-ad-list"></code></pre>
+</span>
+<span id="execution-error-GETapi-ad-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-ad-list"></code></pre>
+</span>
+<form id="form-GETapi-ad-list" data-method="GET"
+      data-path="api/ad/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-ad-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-ad-list"
+                    onclick="tryItOut('GETapi-ad-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-ad-list"
+                    onclick="cancelTryOut('GETapi-ad-list');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-ad-list" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/ad/list</code></b>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                    <p>
+                <b><code>category_id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="category_id"
+               data-endpoint="GETapi-ad-list"
+               data-component="query"  hidden>
+    <br>
+<p>[integer] Request Category Id</p>            </p>
+                    <p>
+                <b><code>tag</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="tag"
+               data-endpoint="GETapi-ad-list"
+               data-component="query"  hidden>
+    <br>
+<p>[string] Request Tag Name</p>            </p>
+                </form>
+
+        <h1 id="categories">Categories</h1>
+
+    
+
+            <h2 id="categories-GETapi-category-list">List All Categories.</h2>
+
+<p>
+</p>
+
+<p>returns a Pagination of Categories 10 per page</p>
+
+<span id="example-requests-GETapi-category-list">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/category/list" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/category/list"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-category-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+data&quot;: [
+ {
+       &quot;id&quot;: 2,
+       &quot;category&quot;: &quot;category 2&quot;
+   },
+   {
+       &quot;id&quot;: 1,
+       &quot;category&quot;: &quot;category 1&quot;
+   }
+],
+&quot;links&quot;: {
+   &quot;first&quot;: &quot;http://127.0.0.1:8001/api/category/list?page=1&quot;,
+   &quot;last&quot;: &quot;http://127.0.0.1:8001/api/category/list?page=1&quot;,
+   &quot;prev&quot;: null,
+   &quot;next&quot;: null
+},
+&quot;meta&quot;: {
+ &quot;current_page&quot;: 1,
+   &quot;from&quot;: 1,
+   &quot;last_page&quot;: 1,
+   &quot;links&quot;: [
+       {
+           &quot;url&quot;: null,
+           &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+           &quot;active&quot;: false
+       },
+       {
+         &quot;url&quot;: &quot;http://127.0.0.1:8001/api/category/list?page=1&quot;,
+         &quot;label&quot;: &quot;1&quot;,
+         &quot;active&quot;: true
+     },
+     {
+         &quot;url&quot;: null,
+         &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+         &quot;active&quot;: false
+     }
+ ],
+ &quot;path&quot;: &quot;http://127.0.0.1:8001/api/category/list&quot;,
+ &quot;per_page&quot;: 10,
+ &quot;to&quot;: 2,
+ &quot;total&quot;: 2
+}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-category-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-category-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-category-list"></code></pre>
+</span>
+<span id="execution-error-GETapi-category-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-category-list"></code></pre>
+</span>
+<form id="form-GETapi-category-list" data-method="GET"
+      data-path="api/category/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-category-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-category-list"
+                    onclick="tryItOut('GETapi-category-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-category-list"
+                    onclick="cancelTryOut('GETapi-category-list');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-category-list" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/category/list</code></b>
+        </p>
+                    </form>
+
+        <h1 id="category">Category</h1>
+
+    
+
+            <h2 id="category-GETapi-category--id--show">List Category Data.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-category--id--show">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/category/9/show" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/category/9/show"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-category--id--show">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;category&quot;: &quot;category 1&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-category--id--show" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-category--id--show"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-category--id--show"></code></pre>
+</span>
+<span id="execution-error-GETapi-category--id--show" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-category--id--show"></code></pre>
+</span>
+<form id="form-GETapi-category--id--show" data-method="GET"
+      data-path="api/category/{id}/show"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-category--id--show', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-category--id--show"
+                    onclick="tryItOut('GETapi-category--id--show');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-category--id--show"
+                    onclick="cancelTryOut('GETapi-category--id--show');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-category--id--show" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/category/{id}/show</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-category--id--show"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the category.</p>            </p>
+                    </form>
+
+        <h1 id="category-requests">Category Requests</h1>
+
+    
+
+            <h2 id="category-requests-POSTapi-category-store">Store New Category</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-category-store">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/category/store" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"category\": \"consequatur\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/category/store"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "category": "consequatur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-category-store">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Saved Successfully&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Field Is Required&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-category-store" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-category-store"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-category-store"></code></pre>
+</span>
+<span id="execution-error-POSTapi-category-store" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-category-store"></code></pre>
+</span>
+<form id="form-POSTapi-category-store" data-method="POST"
+      data-path="api/category/store"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-category-store', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-category-store"
+                    onclick="tryItOut('POSTapi-category-store');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-category-store"
+                    onclick="cancelTryOut('POSTapi-category-store');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-category-store" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/category/store</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>category</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="category"
+               data-endpoint="POSTapi-category-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Category Name</p>        </p>
+    
+    </form>
+
+            <h2 id="category-requests-PATCHapi-category--id--update">Update Category</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-category--id--update">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PATCH \
+    "http://localhost/api/category/19/update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"category\": \"quisquam\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/category/19/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "category": "quisquam"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PATCHapi-category--id--update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Updated Successfully&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Field Is Required&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-category--id--update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-category--id--update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-category--id--update"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-category--id--update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-category--id--update"></code></pre>
+</span>
+<form id="form-PATCHapi-category--id--update" data-method="PATCH"
+      data-path="api/category/{id}/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-category--id--update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-category--id--update"
+                    onclick="tryItOut('PATCHapi-category--id--update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-category--id--update"
+                    onclick="cancelTryOut('PATCHapi-category--id--update');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-category--id--update" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/category/{id}/update</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PATCHapi-category--id--update"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the category.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>category</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="category"
+               data-endpoint="PATCHapi-category--id--update"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Category Name</p>        </p>
+    
+    </form>
+
+            <h2 id="category-requests-DELETEapi-category--id--destroy">Destroy Category</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-category--id--destroy">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/category/17/destroy" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/category/17/destroy"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-category--id--destroy">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Deleted Successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-category--id--destroy" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-category--id--destroy"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-category--id--destroy"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-category--id--destroy" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-category--id--destroy"></code></pre>
+</span>
+<form id="form-DELETEapi-category--id--destroy" data-method="DELETE"
+      data-path="api/category/{id}/destroy"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-category--id--destroy', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-category--id--destroy"
+                    onclick="tryItOut('DELETEapi-category--id--destroy');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-category--id--destroy"
+                    onclick="cancelTryOut('DELETEapi-category--id--destroy');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-category--id--destroy" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/category/{id}/destroy</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-category--id--destroy"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the category.</p>            </p>
+                    </form>
+
+            <h2 id="category-requests-POSTapi-ad-store">Store New Category</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-ad-store">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/ad/store" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": \"excepturi\",
+    \"category_id\": \"maiores\",
+    \"type_id\": \"et\",
+    \"title\": \"veniam\",
+    \"description\": \"facere\",
+    \"start_date\": \"voluptatum\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/ad/store"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "excepturi",
+    "category_id": "maiores",
+    "type_id": "et",
+    "title": "veniam",
+    "description": "facere",
+    "start_date": "voluptatum"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-ad-store">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Saved Successfully&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Category Field Is Required&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-ad-store" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-ad-store"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-ad-store"></code></pre>
+</span>
+<span id="execution-error-POSTapi-ad-store" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-ad-store"></code></pre>
+</span>
+<form id="form-POSTapi-ad-store" data-method="POST"
+      data-path="api/ad/store"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-ad-store', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-ad-store"
+                    onclick="tryItOut('POSTapi-ad-store');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-ad-store"
+                    onclick="cancelTryOut('POSTapi-ad-store');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-ad-store" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/ad/store</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="url"  hidden>
+    <br>
+<p>[integer] required ad id</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>user_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
+                <input type="text"
+               name="user_id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request User Id</p>        </p>
+                <p>
+            <b><code>category_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
+                <input type="text"
+               name="category_id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Category Id</p>        </p>
+                <p>
+            <b><code>type_id</code></b>&nbsp;&nbsp;<small>[integer]</small>  &nbsp;
+                <input type="text"
+               name="type_id"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Type Id</p>        </p>
+                <p>
+            <b><code>title</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="title"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Ad Title</p>        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="description"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Ad Description</p>        </p>
+                <p>
+            <b><code>start_date</code></b>&nbsp;&nbsp;<small>[date]</small>  &nbsp;
+                <input type="text"
+               name="start_date"
+               data-endpoint="POSTapi-ad-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Ad Start Date</p>        </p>
+    
+    </form>
+
+        <h1 id="tag">Tag</h1>
+
+    
+
+            <h2 id="tag-GETapi-tag--id--show">List Tag Data.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-tag--id--show">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/tag/3/show" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tag/3/show"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-tag--id--show">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;tag&quot;: &quot;tag 1&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-tag--id--show" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-tag--id--show"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-tag--id--show"></code></pre>
+</span>
+<span id="execution-error-GETapi-tag--id--show" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-tag--id--show"></code></pre>
+</span>
+<form id="form-GETapi-tag--id--show" data-method="GET"
+      data-path="api/tag/{id}/show"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-tag--id--show', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-tag--id--show"
+                    onclick="tryItOut('GETapi-tag--id--show');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-tag--id--show"
+                    onclick="cancelTryOut('GETapi-tag--id--show');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-tag--id--show" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/tag/{id}/show</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-tag--id--show"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the tag.</p>            </p>
+                    </form>
+
+        <h1 id="tag-requests">Tag Requests</h1>
+
+    
+
+            <h2 id="tag-requests-POSTapi-tag-store">Store New Tag</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-tag-store">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/tag/store" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"ad_id\": \"ut\",
+    \"tag\": \"velit\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tag/store"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "ad_id": "ut",
+    "tag": "velit"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-tag-store">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Tag Saved Successfully&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Tag Field Is Required&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-tag-store" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-tag-store"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-tag-store"></code></pre>
+</span>
+<span id="execution-error-POSTapi-tag-store" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-tag-store"></code></pre>
+</span>
+<form id="form-POSTapi-tag-store" data-method="POST"
+      data-path="api/tag/store"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-tag-store', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-tag-store"
+                    onclick="tryItOut('POSTapi-tag-store');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-tag-store"
+                    onclick="cancelTryOut('POSTapi-tag-store');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-tag-store" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/tag/store</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>ad_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="ad_id"
+               data-endpoint="POSTapi-tag-store"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>tag</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="tag"
+               data-endpoint="POSTapi-tag-store"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Tag Name</p>        </p>
+    
+    </form>
+
+            <h2 id="tag-requests-PATCHapi-tag--id--update">Update Tag</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-tag--id--update">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PATCH \
+    "http://localhost/api/tag/4/update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"ad_id\": \"eum\",
+    \"tag\": \"excepturi\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tag/4/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "ad_id": "eum",
+    "tag": "excepturi"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PATCHapi-tag--id--update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Tag Updated Successfully&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Tag Field Is Required&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-tag--id--update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-tag--id--update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-tag--id--update"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-tag--id--update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-tag--id--update"></code></pre>
+</span>
+<form id="form-PATCHapi-tag--id--update" data-method="PATCH"
+      data-path="api/tag/{id}/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-tag--id--update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-tag--id--update"
+                    onclick="tryItOut('PATCHapi-tag--id--update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-tag--id--update"
+                    onclick="cancelTryOut('PATCHapi-tag--id--update');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-tag--id--update" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/tag/{id}/update</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PATCHapi-tag--id--update"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the tag.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>ad_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="ad_id"
+               data-endpoint="PATCHapi-tag--id--update"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>tag</code></b>&nbsp;&nbsp;<small>[string]</small>  &nbsp;
+                <input type="text"
+               name="tag"
+               data-endpoint="PATCHapi-tag--id--update"
+               data-component="body" required  hidden>
+    <br>
+<p>Request Tag Name</p>        </p>
+    
+    </form>
+
+            <h2 id="tag-requests-DELETEapi-tag--id--destroy">Destroy Tag</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-tag--id--destroy">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/tag/3/destroy" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tag/3/destroy"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-tag--id--destroy">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Tag Deleted Successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-tag--id--destroy" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-tag--id--destroy"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-tag--id--destroy"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-tag--id--destroy" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-tag--id--destroy"></code></pre>
+</span>
+<form id="form-DELETEapi-tag--id--destroy" data-method="DELETE"
+      data-path="api/tag/{id}/destroy"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-tag--id--destroy', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-tag--id--destroy"
+                    onclick="tryItOut('DELETEapi-tag--id--destroy');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-tag--id--destroy"
+                    onclick="cancelTryOut('DELETEapi-tag--id--destroy');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-tag--id--destroy" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/tag/{id}/destroy</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-tag--id--destroy"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the tag.</p>            </p>
+                    </form>
+
+        <h1 id="tags">tags</h1>
+
+    
+
+            <h2 id="tags-GETapi-tag-list">List All Tags.</h2>
+
+<p>
+</p>
+
+<p>returns a Pagination of tags 10 per page</p>
+
+<span id="example-requests-GETapi-tag-list">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/tag/list" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tag/list"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-tag-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+data&quot;: [
+ {
+       &quot;id&quot;: 2,
+       &quot;tag&quot;: &quot;tag 2&quot;
+   },
+   {
+       &quot;id&quot;: 1,
+       &quot;tag&quot;: &quot;tag 1&quot;
+   }
+],
+&quot;links&quot;: {
+   &quot;first&quot;: &quot;http://127.0.0.1:8001/api/tag/list?page=1&quot;,
+   &quot;last&quot;: &quot;http://127.0.0.1:8001/api/tag/list?page=1&quot;,
+   &quot;prev&quot;: null,
+   &quot;next&quot;: null
+},
+&quot;meta&quot;: {
+ &quot;current_page&quot;: 1,
+   &quot;from&quot;: 1,
+   &quot;last_page&quot;: 1,
+   &quot;links&quot;: [
+       {
+           &quot;url&quot;: null,
+           &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+           &quot;active&quot;: false
+       },
+       {
+         &quot;url&quot;: &quot;http://127.0.0.1:8001/api/tag/list?page=1&quot;,
+         &quot;label&quot;: &quot;1&quot;,
+         &quot;active&quot;: true
+     },
+     {
+         &quot;url&quot;: null,
+         &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+         &quot;active&quot;: false
+     }
+ ],
+ &quot;path&quot;: &quot;http://127.0.0.1:8001/api/tag/list&quot;,
+ &quot;per_page&quot;: 10,
+ &quot;to&quot;: 2,
+ &quot;total&quot;: 2
+}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-tag-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-tag-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-tag-list"></code></pre>
+</span>
+<span id="execution-error-GETapi-tag-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-tag-list"></code></pre>
+</span>
+<form id="form-GETapi-tag-list" data-method="GET"
+      data-path="api/tag/list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-tag-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-tag-list"
+                    onclick="tryItOut('GETapi-tag-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-tag-list"
+                    onclick="cancelTryOut('GETapi-tag-list');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-tag-list" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/tag/list</code></b>
+        </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>

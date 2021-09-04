@@ -37,8 +37,8 @@ class CategoryController extends Controller
      *    }
      * ],
      * "links": {
-     *    "first": "http://127.0.0.1:8001/api/category/list?page=1",
-     *    "last": "http://127.0.0.1:8001/api/category/list?page=1",
+     *    "first": "http://127.0.0.1:8000/api/category/list?page=1",
+     *    "last": "http://127.0.0.1:8000/api/category/list?page=1",
      *    "prev": null,
      *    "next": null
      * },
@@ -53,7 +53,7 @@ class CategoryController extends Controller
      *            "active": false
      *        },
      *        {
-     *          "url": "http://127.0.0.1:8001/api/category/list?page=1",
+     *          "url": "http://127.0.0.1:8000/api/category/list?page=1",
      *          "label": "1",
      *          "active": true
      *      },
@@ -63,21 +63,21 @@ class CategoryController extends Controller
      *          "active": false
      *      }
      *  ],
-     *  "path": "http://127.0.0.1:8001/api/category/list",
+     *  "path": "http://127.0.0.1:8000/api/category/list",
      *  "per_page": 10,
      *  "to": 2,
      *  "total": 2
      * }
      * }
      */
-    public function index(){
+    public function index()
+    {
         $categories = $this->categoryRepository->index();
         return $categories;
     }
 
     /**
      * Store New Category
-     *
      *
      * @group Category Requests
      *
@@ -93,32 +93,26 @@ class CategoryController extends Controller
      */
      public function store(Request $request)
      {
-         $validation = Validator::make($request->all(),[
-            'category' => 'required',
+         // validate the request
+         $request->validate([
+             'category' => 'required',
          ]);
 
-         if($validation->fails()){
+         // store the tag
+         $store = $this->categoryRepository->store($request);
 
-            return response()->json([
-                'message' => "Category Field Is Required"
-              ], 400);
-        }
-        else
-        {
-            $store = $this->categoryRepository->store($request);
-
-            return response()->json([
-               'message' => "Category Saved Successfully"
-             ], 200);
-        }
+         return response()->json([
+            'message' => "Category Saved Successfully"
+         ], 200);
 
      }
 
      /**
       * List Category Data.
       *
-      *
       * @group Category
+      *
+      * @urlParam id [integer] required ad id
       *
       * @response 200 {
       *     "data": {
@@ -127,56 +121,40 @@ class CategoryController extends Controller
       *    }
       * }
       */
-     public function show(Category $category){
-
+     public function show(Category $category)
+     {
          return new CategoryResource($category);
      }
 
      /**
       * Update Category
       *
-      *
       * @group Category Requests
       *
-      * @bodyParam category [string] required Request Category Name
+      * @urlParam id [integer] required ad id
+      * @bodyParam category [string] Request Category Name
       *
       * @response 200 {
       *	   "message": "Category Updated Successfully"
       * }
       *
-      * @response 400 {
-      *  "message": "Category Field Is Required"
-      * }
       */
       public function update(Category $category, Request $request)
       {
-        $validation = Validator::make($request->all(),[
-           'category' => 'required',
-        ]);
+          // update the category
+          $update = $this->categoryRepository->update($category);
 
-        if($validation->fails()){
-
-             return response()->json([
-                 'message' => "Category Field Is Required"
-               ], 400);
-         }
-         else
-         {
-             $update = $this->categoryRepository->update($category);
-
-               return response()->json([
-                  'message' => "Category Updated Successfully"
-                ], 200);
-         }
-
+          return response()->json([
+              'message' => "Category Updated Successfully"
+          ], 200);
       }
 
       /**
        * Destroy Category
        *
-       *
        * @group Category Requests
        *
+       * @urlParam id [integer] required ad id
        *
        * @response 200 {
        *	   "message": "Category Deleted Successfully"
@@ -186,9 +164,9 @@ class CategoryController extends Controller
        {
             $destroy = $this->categoryRepository->destroy($category);
 
-              return response()->json([
-                 'message' => "Category Deleted Successfully"
-               ], 200);
+            return response()->json([
+               'message' => "Category Deleted Successfully"
+             ], 200);
        }
 
 }

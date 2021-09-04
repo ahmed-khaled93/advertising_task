@@ -32,6 +32,7 @@ class AdController extends Controller
      *  "data": [
      *    {
      *        "id": 5,
+     *        "user_id": 1,
      *        "category_id": 3,
      *        "type_id": 2,
      *        "title": "ad 2",
@@ -40,6 +41,7 @@ class AdController extends Controller
      *    },
      *    {
      *        "id": 7,
+     *        "user_id": 2,
      *        "category_id": 3,
      *        "type_id": 1,
      *        "title": "ad 3",
@@ -89,10 +91,10 @@ class AdController extends Controller
     }
 
     /**
-     * Store New Category
+     * Store New Ad
      *
      *
-     * @group Category Requests
+     * @group Ad Requests
      *
      * @urlParam id [integer] required ad id
      * @bodyParam user_id [integer] required Request User Id
@@ -103,12 +105,9 @@ class AdController extends Controller
      * @bodyParam start_date [date] required Request Ad Start Date
      *
      * @response 200 {
-     *	   "message": "Category Saved Successfully"
+     *	   "message": "Ad Saved Successfully"
      * }
      *
-     * @response 400 {
-     *  "message": "Category Field Is Required"
-     * }
      */
      public function store(Request $request)
      {
@@ -174,14 +173,12 @@ class AdController extends Controller
       */
       public function update(Ad $ad, Request $request)
       {
-
           // update the ad
           $update = $this->adRepository->update($ad);
 
           return response()->json([
             'message' => "Ad Updated Successfully"
           ], 200);
-
       }
 
       /**
@@ -199,9 +196,9 @@ class AdController extends Controller
        {
             $destroy = $this->adRepository->destroy($ad);
 
-              return response()->json([
-                 'message' => "Ad Deleted Successfully"
-               ], 200);
+            return response()->json([
+               'message' => "Ad Deleted Successfully"
+             ], 200);
        }
 
 }

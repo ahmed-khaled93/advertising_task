@@ -1,0 +1,189 @@
+name: 'Category Requests'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/category/store
+    metadata:
+      title: 'Store New Category'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      category:
+        name: category
+        description: 'Request Category Name'
+        required: true
+        example: consequatur
+        type: '[string]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "message": "Category Saved Successfully"
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+           "message": "Category Field Is Required"
+          }
+        headers: []
+        description: '400'
+    responseFields: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/category/{id}/update'
+    metadata:
+      title: 'Update Category'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 19
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      category:
+        name: category
+        description: 'Request Category Name'
+        required: true
+        example: quisquam
+        type: '[string]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "message": "Category Updated Successfully"
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+           "message": "Category Field Is Required"
+          }
+        headers: []
+        description: '400'
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/category/{id}/destroy'
+    metadata:
+      title: 'Destroy Category'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 17
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "message": "Category Deleted Successfully"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ad/store
+    metadata:
+      title: 'Store New Category'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: '[integer] required ad id'
+        required: false
+        example: qui
+        type: string
+    queryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'Request User Id'
+        required: true
+        example: excepturi
+        type: '[integer]'
+      category_id:
+        name: category_id
+        description: 'Request Category Id'
+        required: true
+        example: maiores
+        type: '[integer]'
+      type_id:
+        name: type_id
+        description: 'Request Type Id'
+        required: true
+        example: et
+        type: '[integer]'
+      title:
+        name: title
+        description: 'Request Ad Title'
+        required: true
+        example: veniam
+        type: '[string]'
+      description:
+        name: description
+        description: 'Request Ad Description'
+        required: true
+        example: facere
+        type: '[string]'
+      start_date:
+        name: start_date
+        description: 'Request Ad Start Date'
+        required: true
+        example: voluptatum
+        type: '[date]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "message": "Category Saved Successfully"
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+           "message": "Category Field Is Required"
+          }
+        headers: []
+        description: '400'
+    responseFields: []
